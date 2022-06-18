@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0.1 (Python 3.8.10 on linux)" generated="20220618 03:01:27.965" rpa="false" schemaversion="3">
+<suite id="s1" name="Beer" source="/home/gabriel/Desenvolvimento/BEES-challenge/suits/beer">
+<suite id="s1-s1" name="Buy Beer" source="/home/gabriel/Desenvolvimento/BEES-challenge/suits/beer/buy_beer.robot">
+<test id="s1-s1-t1" name="Scnario 01: Buy a beer creating a new account with different passwords" line="7">
+<kw name="Given I'm at home page" library="home_page">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${general.URL}</arg>
+<arg>${general.Browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220618 03:01:28.129" level="INFO">Opening browser 'chrome' to base url 'https://www.amazon.com.br'.</msg>
+<status status="PASS" starttime="20220618 03:01:28.127" endtime="20220618 03:01:31.235"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220618 03:01:31.236" endtime="20220618 03:01:31.380"/>
+</kw>
+<status status="PASS" starttime="20220618 03:01:28.126" endtime="20220618 03:01:31.380"/>
+</kw>
+<kw name="When I search for cerveja leffe blonde" library="home_page" sourcename="I search for ${text}">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${home.i_search}</arg>
+<arg>5</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220618 03:01:31.382" endtime="20220618 03:01:31.448"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${home.i_search}</arg>
+<arg>${text}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220618 03:01:31.449" level="INFO">Typing text 'cerveja leffe blonde' into text field '//input[@id="twotabsearchtextbox"]'.</msg>
+<status status="PASS" starttime="20220618 03:01:31.448" endtime="20220618 03:01:31.668"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${home.i_search_button}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220618 03:01:31.669" level="INFO">Clicking element '//input[@id="nav-search-submit-button"]'.</msg>
+<status status="PASS" starttime="20220618 03:01:31.668" endtime="20220618 03:01:33.237"/>
+</kw>
+<status status="PASS" starttime="20220618 03:01:31.381" endtime="20220618 03:01:33.237"/>
+</kw>
+<kw name="And I select the first option" library="search_results_page">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${result.a_first}</arg>
+<arg>5</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220618 03:01:33.238" endtime="20220618 03:01:33.292"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${result.a_first}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220618 03:01:33.294" level="INFO">Clicking element '//span[contains(text(), "Cerveja Leffe Blonde")]'.</msg>
+<status status="PASS" starttime="20220618 03:01:33.292" endtime="20220618 03:01:35.283"/>
+</kw>
+<status status="PASS" starttime="20220618 03:01:33.238" endtime="20220618 03:01:35.283"/>
+</kw>
+<kw name="And I select buy now" library="product_page">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${product.i_buy_now_button}</arg>
+<arg>5</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220618 03:01:35.284" endtime="20220618 03:01:35.314"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${product.i_buy_now_button}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220618 03:01:35.315" level="INFO">Clicking element '//input[@id="buy-now-button"]'.</msg>
+<status status="PASS" starttime="20220618 03:01:35.315" endtime="20220618 03:01:36.449"/>
+</kw>
+<status status="PASS" starttime="20220618 03:01:35.283" endtime="20220618 03:01:36.449"/>
+</kw>
+<kw name="And I select create account" library="login_page">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${login.a_create_account}</arg>
+<arg>5</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220618 03:01:36.450" endtime="20220618 03:01:36.475"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${login.a_create_account}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220618 03:01:36.476" level="INFO">Clicking element '//a[@id="createAccountSubmit"]'.</msg>
+<status status="PASS" starttime="20220618 03:01:36.475" endtime="20220618 03:01:36.908"/>
+</kw>
+<status status="PASS" starttime="20220618 03:01:36.450" endtime="20220618 03:01:36.908"/>
+</kw>
+<kw name="When I type the name Gabriel" library="login_page" sourcename="I type the name ${name}">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${login.i_name}</arg>
+<arg>5</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220618 03:01:36.909" endtime="20220618 03:01:36.931"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${login.i_name}</arg>
+<arg>${name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220618 03:01:36.932" level="INFO">Typing text 'Gabriel' into text field '//input[@id="ap_customer_name"]'.</msg>
+<status status="PASS" starttime="20220618 03:01:36.931" endtime="20220618 03:01:37.009"/>
+</kw>
+<status status="PASS" starttime="20220618 03:01:36.908" endtime="20220618 03:01:37.009"/>
+</kw>
+<kw name="And I type the email bees.challenge@ambev.com" library="login_page" sourcename="I type the email ${email}">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${login.i_email}</arg>
+<arg>5</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220618 03:01:37.010" endtime="20220618 03:01:37.030"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${login.i_email}</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220618 03:01:37.031" level="INFO">Typing text 'bees.challenge@ambev.com' into text field '//input[@id="ap_email"]'.</msg>
+<status status="PASS" starttime="20220618 03:01:37.030" endtime="20220618 03:01:37.145"/>
+</kw>
+<status status="PASS" starttime="20220618 03:01:37.009" endtime="20220618 03:01:37.145"/>
+</kw>
+<kw name="And I type the password &quot;000000&quot;" library="login_page" sourcename="I type the password &quot;${password}&quot;">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${login.i_password}</arg>
+<arg>5</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220618 03:01:37.146" endtime="20220618 03:01:37.173"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${login.i_password}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220618 03:01:37.174" level="INFO">Typing text '000000' into text field '//input[@id="ap_password"]'.</msg>
+<status status="PASS" starttime="20220618 03:01:37.173" endtime="20220618 03:01:37.262"/>
+</kw>
+<status status="PASS" starttime="20220618 03:01:37.146" endtime="20220618 03:01:37.262"/>
+</kw>
+<kw name="And I type the password again to confirm &quot;000001&quot;" library="login_page" sourcename="I type the password again to confirm &quot;${password}&quot;">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${login.i_confirm_password}</arg>
+<arg>5</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220618 03:01:37.263" endtime="20220618 03:01:37.286"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${login.i_confirm_password}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220618 03:01:37.287" level="INFO">Typing text '000001' into text field '//input[@id="ap_password_check"]'.</msg>
+<status status="PASS" starttime="20220618 03:01:37.286" endtime="20220618 03:01:37.386"/>
+</kw>
+<status status="PASS" starttime="20220618 03:01:37.263" endtime="20220618 03:01:37.386"/>
+</kw>
+<kw name="And I select the option verify email" library="login_page">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${login.s_continue}</arg>
+<arg>5</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220618 03:01:37.388" endtime="20220618 03:01:37.481"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${login.s_continue}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220618 03:01:37.482" level="INFO">Clicking element '//span[@id="auth-continue"]'.</msg>
+<status status="PASS" starttime="20220618 03:01:37.482" endtime="20220618 03:01:37.658"/>
+</kw>
+<status status="PASS" starttime="20220618 03:01:37.387" endtime="20220618 03:01:37.658"/>
+</kw>
+<kw name="Then the error message &quot;As senhas não são iguais&quot; should appear" library="login_page" sourcename="The error message &quot;${message}&quot; should appear">
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>${login.d_error_message}</arg>
+<arg>${message}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20220618 03:01:37.664" level="INFO">Verifying element '//div[@id="auth-password-mismatch-alert"]/div/div' contains exact text 'As senhas não são iguais'.</msg>
+<status status="PASS" starttime="20220618 03:01:37.660" endtime="20220618 03:01:37.706"/>
+</kw>
+<status status="PASS" starttime="20220618 03:01:37.659" endtime="20220618 03:01:37.706"/>
+</kw>
+<kw name="Close All Browsers" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20220618 03:01:37.706" endtime="20220618 03:01:37.788"/>
+</kw>
+<status status="PASS" starttime="20220618 03:01:28.124" endtime="20220618 03:01:37.788"/>
+</test>
+<doc>Validate a beer purchase at Amazon website</doc>
+<status status="PASS" starttime="20220618 03:01:27.984" endtime="20220618 03:01:37.790"/>
+</suite>
+<status status="PASS" starttime="20220618 03:01:27.966" endtime="20220618 03:01:37.792"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Beer">Beer</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1" name="Buy Beer">Beer.Buy Beer</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
